@@ -15,6 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
         zh: ["泡菜汤", "大酱汤", "烤五花肉", "炸鸡", "比萨", "寿司", "意大利面", "辣炒年糕", "汉堡", "猪蹄"]
     };
 
+    const menuImages = [
+        "https://upload.wikimedia.org/wikipedia/commons/e/eb/Korean.cuisine-Kimchi_jjigae-01.jpg", // Kimchi Stew
+        "https://upload.wikimedia.org/wikipedia/commons/a/a2/Doenjang-jjigae.jpg", // Doenjang Stew
+        "https://upload.wikimedia.org/wikipedia/commons/3/36/Korean_Barbecue-Samgyeopsal-01.jpg", // Grilled Pork Belly
+        "https://upload.wikimedia.org/wikipedia/commons/2/20/Korean_fried_chicken_3.jpg", // Fried Chicken
+        "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg", // Pizza
+        "https://upload.wikimedia.org/wikipedia/commons/6/60/Sushi_platter.jpg", // Sushi
+        "https://upload.wikimedia.org/wikipedia/commons/4/4d/Tagliatelle_al_rag%C3%B9_%28pasta_bolognese%29.jpg", // Pasta
+        "https://upload.wikimedia.org/wikipedia/commons/2/29/Tteokbokki.JPG", // Tteokbokki
+        "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg", // Hamburger
+        "https://upload.wikimedia.org/wikipedia/commons/c/c8/Korean.food-Jokbal-01.jpg" // Jokbal
+    ];
+
     const translations = {
         ko: {
             title: "로또 번호 생성기",
@@ -208,16 +221,38 @@ document.addEventListener('DOMContentLoaded', () => {
         // Use current selected language or fallback to 'ko'
         const lang = languageSelector.value || 'ko';
         const menuList = menus[lang] || menus['ko'];
-        const randomMenu = menuList[Math.floor(Math.random() * menuList.length)];
+        const randomIndex = Math.floor(Math.random() * menuList.length);
+        const randomMenu = menuList[randomIndex];
+        const randomImage = menuImages[randomIndex];
+        
         dinnerMenuText.textContent = randomMenu;
+
+        // Handle Image
+        let imgElement = document.getElementById('dinner-menu-img');
+        if (!imgElement) {
+            imgElement = document.createElement('img');
+            imgElement.id = 'dinner-menu-img';
+            imgElement.alt = "Dinner Menu Image";
+            const displayContainer = document.getElementById('dinner-menu-display');
+            displayContainer.insertBefore(imgElement, dinnerMenuText);
+        }
+        imgElement.src = randomImage;
+        imgElement.style.display = 'block';
         
         // Add a small animation effect
         dinnerMenuText.style.opacity = 0;
         dinnerMenuText.style.transform = "translateY(10px)";
+        imgElement.style.opacity = 0;
+        imgElement.style.transform = "translateY(10px) scale(0.95)";
+
         setTimeout(() => {
             dinnerMenuText.style.transition = "all 0.3s ease";
             dinnerMenuText.style.opacity = 1;
             dinnerMenuText.style.transform = "translateY(0)";
+
+            imgElement.style.transition = "all 0.5s ease";
+            imgElement.style.opacity = 1;
+            imgElement.style.transform = "translateY(0) scale(1)";
         }, 50);
     });
 
