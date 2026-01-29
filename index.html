@@ -41,32 +41,83 @@
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "인공지능 동물상 테스트",
-      "url": "https://m4ru.com/",
-      "description": "인공지능 AI가 사진을 분석하여 강아지상인지 고양이상인지 알려주는 무료 온라인 테스트입니다.",
-      "applicationCategory": "EntertainmentApplication",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "KRW"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "StrayCat"
-      }
-    }
-    </script>
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7431580297504583"
-     crossorigin="anonymous"></script>
+    <!-- Performance Optimization (Preconnect) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (JSON-LD) for SEO & GEO -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "인공지능 동물상 테스트 (AI Animal Face Test)",
+        "url": "https://m4ru.com/",
+        "image": "https://m4ru.com/favicon.png",
+        "description": "구글 Teachable Machine 2.0 기반의 고성능 AI가 당신의 얼굴 사진을 분석하여 강아지상, 고양이상 등 동물상 비율을 정확하게 알려줍니다.",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KRW"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "StrayCat"
+        },
+        "featureList": "얼굴 인식, 동물상 분석, AI 관상 테스트, 결과 공유 기능"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "내 사진이 서버에 저장되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "아니요, 절대 저장되지 않습니다. 이 서비스는 TensorFlow.js를 활용하여 모든 분석 과정이 사용자의 브라우저(클라이언트) 내에서만 이루어집니다. 서버로 이미지가 전송되지 않으므로 개인정보 유출 걱정 없이 안전하게 이용할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "AI 동물상 테스트의 정확도는 어느 정도인가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "본 서비스는 수만 장의 연예인 사진 데이터를 학습한 구글의 Teachable Machine 모델을 사용합니다. 사진의 각도나 조명에 따라 결과가 달라질 수 있으나, 일반적으로 높은 인식률을 보입니다. 다만, 전문적인 관상 서비스가 아닌 재미를 위한 AI 테스트임을 참고해주세요."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "AI 동물상 테스트 하는 방법",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "사진 업로드",
+            "text": "테스트하고 싶은 얼굴 사진을 업로드하거나 카메라로 촬영합니다."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "AI 분석 대기",
+            "text": "인공지능이 사진 속 얼굴의 특징을 분석할 때까지 잠시 기다립니다."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "결과 확인 및 공유",
+            "text": "강아지상, 고양이상 등 나의 동물상 비율 결과를 확인하고 친구들에게 공유합니다."
+          }
+        ]
+      }
+    ]
+    </script>
 </head>
 <body>
     <nav class="navbar">
