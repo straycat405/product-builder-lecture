@@ -40,6 +40,25 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.language-selector {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--container-background);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.language-selector:hover {
+    box-shadow: 0 0 5px var(--glow-color);
 }
 
 .theme-switch {
