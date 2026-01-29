@@ -132,6 +132,51 @@ function displayResults(prediction) {
 
 predictBtn.addEventListener('click', predict);
 
+// Social Share Functionality
+const shareNative = document.getElementById('share-native');
+const shareTwitter = document.getElementById('share-twitter');
+const shareFacebook = document.getElementById('share-facebook');
+const shareCopy = document.getElementById('share-copy');
+
+const shareData = {
+    title: '인공지능 동물상 테스트',
+    text: '나는 강아지상일까? 고양이상일까? AI가 분석해주는 동물상 테스트! 🐾',
+    url: window.location.href
+};
+
+// Check for native share support
+if (navigator.share) {
+    shareNative.style.display = 'flex';
+    shareNative.addEventListener('click', async () => {
+        try {
+            await navigator.share(shareData);
+        } catch (err) {
+            console.log('Error sharing:', err);
+        }
+    });
+}
+
+shareTwitter.addEventListener('click', () => {
+    const text = encodeURIComponent(shareData.text);
+    const url = encodeURIComponent(shareData.url);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+});
+
+shareFacebook.addEventListener('click', () => {
+    const url = encodeURIComponent(shareData.url);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+});
+
+shareCopy.addEventListener('click', async () => {
+    try {
+        await navigator.clipboard.writeText(shareData.url);
+        alert('링크가 복사되었습니다!');
+    } catch (err) {
+        console.error('Failed to copy: ', err);
+        prompt('이 링크를 복사하세요:', shareData.url);
+    }
+});
+
 retryBtn.addEventListener('click', () => {
     imageInput.value = '';
     imagePreview.src = '';

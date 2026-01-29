@@ -26,15 +26,20 @@ This application is an AI-powered "Animal Lookalike Test" that determines whethe
     - **Modern CSS:** CSS Variables, Flexbox/Grid, and Container Queries.
     - **ES Modules:** Organized JavaScript code.
 
-## Current Plan
 
-1.  **HTML (`index.html`):** 
-    - Structure the main container, upload area, and result section.
-    - Include TensorFlow.js and Teachable Machine libraries.
-2.  **CSS (`style.css`):** 
-    - Create a modern look with gradients, shadows, and responsive layouts.
-    - Style the upload area and result progress bars.
-3.  **JavaScript (`main.js`):** 
-    - Load the Teachable Machine model from the provided URL.
-    - Implement image preview and prediction logic.
-    - Update the UI with prediction results.
+## User Preferences (Memory)
+
+1.  **Explanation Style:** Web Developer Perspective (Full-stack: Frontend & Backend concepts).
+2.  **Language:** Korean (concise).
+
+## Current Status
+
+-   **Phase:** Core Implementation Complete.
+-   **Files:**
+    -   `index.html`: Fully structured with SEO, semantic HTML, and sections.
+    -   `style.css`: Modern styling with variables, responsiveness, and animations.
+    -   `main.js`: Functional image upload, preview, and Teachable Machine prediction logic.
+-   **Pending:**
+    -   Social sharing functionality.
+    -   Further SEO refinements.
+    -   Refining ad placements.
