@@ -134,7 +134,7 @@ predictBtn.addEventListener('click', predict);
 
 retryBtn.addEventListener('click', () => {
     imageInput.value = '';
-    imagePreview.src = '#';
+    imagePreview.src = '';
     imagePreview.hidden = true;
     uploadContent.hidden = false;
     predictBtn.disabled = true;
