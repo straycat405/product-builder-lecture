@@ -112,10 +112,12 @@ function displayResults(prediction) {
         const resultBar = document.createElement('div');
         resultBar.className = 'result-bar-wrapper';
         resultBar.innerHTML = `
-            <span class="label-name">${classTitle}</span>
+            <div class="label-name">
+                <span>${classTitle}</span>
+                <span class="percent">${probability}%</span>
+            </div>
             <div class="bar-container">
                 <div class="bar ${colorClass}" style="width: 0%"></div>
-                <span class="percent">${probability}%</span>
             </div>
         `;
         labelsDiv.appendChild(resultBar);
