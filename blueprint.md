@@ -44,6 +44,7 @@ This application is an AI-powered "Animal Lookalike Test" that determines whethe
     -   `index.html`: Fully structured with SEO, semantic HTML, and sections.
     -   `style.css`: Modern styling with variables, responsiveness, and animations.
     -   `main.js`: Functional image upload, preview, and Teachable Machine prediction logic.
+    -   `terms.html`: Terms of Service page.
 -   **Pending:**
     -   Further SEO refinements.
     -   Further SEO refinements.
