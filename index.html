@@ -122,19 +122,20 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">🐾 동물상 테스트</a>
+            <a href="index.html" class="logo">🐾 <span data-i18n="logo">동물상 테스트</span></a>
             <ul class="nav-links">
-                <li><a href="#upload-section">테스트하기</a></li>
-                <li><a href="#about">특징 알아보기</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#upload-section" data-i18n="nav.test">테스트하기</a></li>
+                <li><a href="#about" data-i18n="nav.features">특징 알아보기</a></li>
+                <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
             </ul>
+            <button id="lang-toggle" class="lang-btn" aria-label="Toggle Language">🇺🇸/🇰🇷</button>
         </div>
     </nav>
 
     <div class="container main-container">
         <header>
-            <h1>나와 닮은 동물은 누구?</h1>
-            <p class="subtitle">인공지능이 당신의 관상을 분석해드립니다.<br>강아지상일까요? 아니면 고양이상일까요?</p>
+            <h1 data-i18n="header.title">나와 닮은 동물은 누구?</h1>
+            <p class="subtitle" data-i18n="header.subtitle">인공지능이 당신의 관상을 분석해드립니다.<br>강아지상일까요? 아니면 고양이상일까요?</p>
         </header>
 
         <main>
@@ -143,16 +144,16 @@
                 <div class="file-upload" id="drop-zone">
                     <div class="upload-content" id="upload-content">
                         <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        <p>얼굴 사진을 이곳에 올려주세요</p>
-                        <span class="upload-subtext">사진 데이터는 절대 서버로 전송되지 않습니다.</span>
+                        <p data-i18n="upload.text">얼굴 사진을 이곳에 올려주세요</p>
+                        <span class="upload-subtext" data-i18n="upload.subtext">사진 데이터는 절대 서버로 전송되지 않습니다.</span>
                     </div>
                     <img id="image-preview" class="image-preview" src="#" alt="업로드된 얼굴 사진 미리보기" hidden>
                 </div>
-                <button id="predict-btn" class="btn primary-btn" disabled>분석 시작하기</button>
+                <button id="predict-btn" class="btn primary-btn" disabled data-i18n="btn.start">분석 시작하기</button>
             </section>
 
             <section id="result-section" class="result-section" hidden>
-                <h2>테스트 결과</h2>
+                <h2 data-i18n="result.title">테스트 결과</h2>
                 <div id="label-container" class="label-container">
                     <!-- Results will be injected here -->
                 </div>
@@ -160,7 +161,7 @@
                 
                 <div class="share-container">
                     <button id="share-native" class="share-btn native-share" hidden>
-                        <span class="share-icon">📤</span> 공유하기
+                        <span class="share-icon">📤</span> <span data-i18n="btn.share">공유하기</span>
                     </button>
                     <div class="sns-buttons">
                         <button id="share-twitter" class="share-btn sns-btn twitter" aria-label="트위터 공유">
@@ -175,17 +176,17 @@
                     </div>
                 </div>
 
-                <button id="retry-btn" class="btn secondary-btn">다시 하기</button>
+                <button id="retry-btn" class="btn secondary-btn" data-i18n="btn.retry">다시 하기</button>
             </section>
 
             <div id="loading" class="loading" hidden>
                 <div class="spinner"></div>
-                <p>AI가 얼굴을 분석하고 있습니다...</p>
+                <p data-i18n="loading.text">AI가 얼굴을 분석하고 있습니다...</p>
             </div>
 
             <!-- AdSense Placeholder (Responsive) -->
             <div class="ad-container">
-                <p class="ad-label">Sponsored</p>
+                <p class="ad-label" data-i18n="ad.sponsored">Sponsored</p>
                 <!-- 광고 코드는 승인 후 실제 광고로 대체됩니다 -->
                 <ins class="adsbygoogle"
                      style="display:block"
@@ -199,38 +200,38 @@
             </div>
 
             <article id="about" class="content-section">
-                <h2>🐶 강아지상 vs 🐱 고양이상 특징</h2>
+                <h2 data-i18n="features.title">🐶 강아지상 vs 🐱 고양이상 특징</h2>
                 <div class="feature-grid">
                     <div class="feature-card dog-card">
-                        <h3>🐶 멍뭉미 넘치는 강아지상</h3>
-                        <p>순둥순둥하고 귀여운 매력의 소유자입니다. 눈꼬리가 살짝 처져 있어 선하고 부드러운 인상을 주며, 웃을 때 반달눈이 되어 주변 사람들을 무장해제 시킵니다. 친화력이 좋고 다정다감해 어디서나 사랑받는 인기쟁이!</p>
+                        <h3 data-i18n="features.dog.title">🐶 멍뭉미 넘치는 강아지상</h3>
+                        <p data-i18n="features.dog.desc">순둥순둥하고 귀여운 매력의 소유자입니다. 눈꼬리가 살짝 처져 있어 선하고 부드러운 인상을 주며, 웃을 때 반달눈이 되어 주변 사람들을 무장해제 시킵니다. 친화력이 좋고 다정다감해 어디서나 사랑받는 인기쟁이!</p>
                         <ul>
-                            <li>동그랗고 맑은 큰 눈망울</li>
-                            <li>살짝 처진 순한 눈꼬리</li>
-                            <li>부드럽고 둥근 얼굴 라인</li>
+                            <li data-i18n="features.dog.list1">동그랗고 맑은 큰 눈망울</li>
+                            <li data-i18n="features.dog.list2">살짝 처진 순한 눈꼬리</li>
+                            <li data-i18n="features.dog.list3">부드럽고 둥근 얼굴 라인</li>
                         </ul>
                     </div>
                     <div class="feature-card cat-card">
-                        <h3>🐱 시크도도 매력 고양이상</h3>
-                        <p>세련되고 도시적인 분위기의 소유자입니다. 눈꼬리가 살짝 올라가 있어 도도하고 섹시한 느낌을 주며, 뚜렷한 이목구비로 화려한 인상을 남깁니다. 차가워 보이지만 알면 알수록 빠져드는 반전 매력의 츤데레 스타일!</p>
+                        <h3 data-i18n="features.cat.title">🐱 시크도도 매력 고양이상</h3>
+                        <p data-i18n="features.cat.desc">세련되고 도시적인 분위기의 소유자입니다. 눈꼬리가 살짝 올라가 있어 도도하고 섹시한 느낌을 주며, 뚜렷한 이목구비로 화려한 인상을 남깁니다. 차가워 보이지만 알면 알수록 빠져드는 반전 매력의 츤데레 스타일!</p>
                         <ul>
-                            <li>가로로 길고 매혹적인 눈매</li>
-                            <li>살짝 올라간 매력적인 눈꼬리</li>
-                            <li>날렵하고 갸름한 턱선</li>
+                            <li data-i18n="features.cat.list1">가로로 길고 매혹적인 눈매</li>
+                            <li data-i18n="features.cat.list2">살짝 올라간 매력적인 눈꼬리</li>
+                            <li data-i18n="features.cat.list3">날렵하고 갸름한 턱선</li>
                         </ul>
                     </div>
                 </div>
             </article>
 
             <article id="faq" class="content-section">
-                <h2>자주 묻는 질문 (FAQ)</h2>
+                <h2 data-i18n="faq.title">자주 묻는 질문 (FAQ)</h2>
                 <div class="faq-item">
-                    <h3>Q. 제 사진이 다른 곳에 저장되나요?</h3>
-                    <p>A. 절대 저장되지 않습니다! 🙅‍♂️ 이 테스트는 여러분의 브라우저(클라이언트) 내에서만 작동합니다. 사진 데이터가 서버로 전송되거나 저장되지 않으니 개인정보 걱정 없이 안심하고 즐기셔도 됩니다.</p>
+                    <h3 data-i18n="faq.q1">Q. 제 사진이 다른 곳에 저장되나요?</h3>
+                    <p data-i18n="faq.a1">A. 절대 저장되지 않습니다! 🙅‍♂️ 이 테스트는 여러분의 브라우저(클라이언트) 내에서만 작동합니다. 사진 데이터가 서버로 전송되거나 저장되지 않으니 개인정보 걱정 없이 안심하고 즐기셔도 됩니다.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Q. 결과는 얼마나 정확한가요?</h3>
-                    <p>A. 구글의 인공지능 학습 모델을 기반으로 분석하지만, 사진의 각도나 조명, 표정에 따라 결과가 달라질 수 있습니다. 📸 정확한 분석보다는 재미로 가볍게 즐겨주세요!</p>
+                    <h3 data-i18n="faq.q2">Q. 결과는 얼마나 정확한가요?</h3>
+                    <p data-i18n="faq.a2">A. 구글의 인공지능 학습 모델을 기반으로 분석하지만, 사진의 각도나 조명, 표정에 따라 결과가 달라질 수 있습니다. 📸 정확한 분석보다는 재미로 가볍게 즐겨주세요!</p>
                 </div>
             </article>
 
@@ -238,10 +239,10 @@
 
         <footer>
             <div class="footer-links">
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="terms.html">이용약관</a>
+                <a href="privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+                <a href="terms.html" data-i18n="footer.terms">이용약관</a>
             </div>
-            <p>&copy; 2024 AI Animal Test. Powered by Teachable Machine & TensorFlow.js</p>
+            <p data-i18n="footer.copyright">&copy; 2024 AI Animal Test. Powered by Teachable Machine & TensorFlow.js</p>
         </footer>
     </div>
 
