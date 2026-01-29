@@ -489,6 +489,10 @@ footer {
     justify-content: center;
 }
 
+.loading[hidden] {
+    display: none !important;
+}
+
 .spinner {
     width: 40px;
     height: 40px;
