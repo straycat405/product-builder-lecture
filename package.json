@@ -4,7 +4,7 @@
   "description": "AI Animal Lookalike Test",
   "main": "index.html",
   "scripts": {
-    "build": "copyfiles -f index.html style.css main.js ads.txt privacy.html favicon.png dist",
+    "build": "copyfiles -f index.html style.css main.js ads.txt privacy.html favicon.png sitemap.xml robots.txt dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
