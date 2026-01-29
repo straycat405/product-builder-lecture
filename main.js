@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const menuImages = [
-        "https://upload.wikimedia.org/wikipedia/commons/e/eb/Korean.cuisine-Kimchi_jjigae-01.jpg", // Kimchi Stew
-        "https://upload.wikimedia.org/wikipedia/commons/a/a2/Doenjang-jjigae.jpg", // Doenjang Stew
-        "https://upload.wikimedia.org/wikipedia/commons/3/36/Korean_Barbecue-Samgyeopsal-01.jpg", // Grilled Pork Belly
-        "https://upload.wikimedia.org/wikipedia/commons/2/20/Korean_fried_chicken_3.jpg", // Fried Chicken
-        "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg", // Pizza
-        "https://upload.wikimedia.org/wikipedia/commons/6/60/Sushi_platter.jpg", // Sushi
-        "https://upload.wikimedia.org/wikipedia/commons/4/4d/Tagliatelle_al_rag%C3%B9_%28pasta_bolognese%29.jpg", // Pasta
-        "https://upload.wikimedia.org/wikipedia/commons/2/29/Tteokbokki.JPG", // Tteokbokki
-        "https://upload.wikimedia.org/wikipedia/commons/4/47/Hamburger_%28black_bg%29.jpg", // Hamburger
-        "https://upload.wikimedia.org/wikipedia/commons/c/c8/Korean.food-Jokbal-01.jpg" // Jokbal
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_stew-Kimchi_jjigae-01.jpg", // Kimchi Stew
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Doenjang-jjigae.jpg", // Doenjang Stew
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Samgyeopsal.jpg", // Grilled Pork Belly
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_fried_chicken_3_banban.jpg", // Fried Chicken
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Pizza_Margherita_stu_spivack.jpg", // Pizza
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Sushi_platter.jpg", // Sushi
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Spaghetti_Bolognese.jpg", // Pasta
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Korean.snacks-Tteokbokki-08.jpg", // Tteokbokki
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Hamburger_(black_bg).jpg", // Hamburger
+        "https://commons.wikimedia.org/wiki/Special:FilePath/Jokbal.jpg" // Jokbal
     ];
 
     const translations = {
