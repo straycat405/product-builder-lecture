@@ -12,13 +12,15 @@ This application is an AI-powered "Animal Lookalike Test" that determines whethe
     - **Typography:** Clear and expressive typography using modern sans-serif fonts.
     - **Layout:** Responsive design that works well on both mobile and desktop.
     - **Interactive Elements:** Polished buttons, smooth transitions, and progress bars for prediction results.
+    - **Favicon:** Custom favicon added for better branding.
 
 ### 2. **Functionality**
     - **AI Prediction:** Uses a Teachable Machine model to classify user images.
     - **Image Upload:** Supports both file upload and drag-and-drop for images.
     - **Real-time Feedback:** Displays a preview of the uploaded image.
     - **Detailed Results:** Shows the probability for each animal category (Dog, Cat) using progress bars.
-    - **Social Sharing (Optional):** Ability to share results (to be considered).
+    - **Detailed Results:** Shows the probability for each animal category (Dog, Cat) using progress bars.
+    - **Social Sharing:** Share results via Native Share, Twitter, Facebook, or Copy Link.
 
 ### 3. **Technical Implementation**
     - **Framework-less:** Pure HTML, CSS, and JavaScript.
@@ -40,6 +42,6 @@ This application is an AI-powered "Animal Lookalike Test" that determines whethe
     -   `style.css`: Modern styling with variables, responsiveness, and animations.
     -   `main.js`: Functional image upload, preview, and Teachable Machine prediction logic.
 -   **Pending:**
-    -   Social sharing functionality.
+    -   Further SEO refinements.
     -   Further SEO refinements.
     -   Refining ad placements.
