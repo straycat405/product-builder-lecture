@@ -20,14 +20,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="인공지능 AI가 분석해주는 나만의 동물상 테스트! 나는 강아지상일까 고양이상일까? 사진 한 장으로 알아보는 재미있는 관상 테스트.">
-    <meta name="keywords" content="동물상 테스트, AI 관상, 강아지상, 고양이상, 인공지능 테스트, 얼굴 분석">
-    <meta property="og:title" content="인공지능 동물상 테스트">
-    <meta property="og:description" content="AI가 분석해주는 나의 동물상 찾기! 강아지 vs 고양이, 당신의 얼굴은?">
-    <meta property="og:type" content="website">
+    <meta name="keywords" content="동물상 테스트, AI 관상, 강아지상, 고양이상, 인공지능 테스트, 얼굴 분석, 관상 테스트, AI 얼굴 분석">
     
-    <title>인공지능 동물상 테스트 - 강아지상 vs 고양이상</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://product-builder-lecture.pages.dev/">
+    <meta property="og:title" content="인공지능 동물상 테스트 - 강아지상 vs 고양이상">
+    <meta property="og:description" content="AI가 분석해주는 나의 동물상 찾기! 10초 만에 확인하는 강아지상 vs 고양이상 테스트.">
+    <meta property="og:image" content="https://product-builder-lecture.pages.dev/favicon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://product-builder-lecture.pages.dev/">
+    <meta property="twitter:title" content="인공지능 동물상 테스트 - 강아지상 vs 고양이상">
+    <meta property="twitter:description" content="AI가 분석해주는 나의 동물상 찾기! 10초 만에 확인하는 강아지상 vs 고양이상 테스트.">
+    <meta property="twitter:image" content="https://product-builder-lecture.pages.dev/favicon.png">
+    
+    <link rel="canonical" href="https://product-builder-lecture.pages.dev/">
+    <title>인공지능 동물상 테스트 - 강아지상 vs 고양이상 | AI 관상</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "인공지능 동물상 테스트",
+      "url": "https://product-builder-lecture.pages.dev/",
+      "description": "인공지능 AI가 사진을 분석하여 강아지상인지 고양이상인지 알려주는 무료 온라인 테스트입니다.",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "StrayCat"
+      }
+    }
+    </script>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7431580297504583"
      crossorigin="anonymous"></script>
@@ -61,7 +95,7 @@
                         <p>사진을 올려주세요</p>
                         <span class="upload-subtext">사진은 절대 저장되지 않습니다.</span>
                     </div>
-                    <img id="image-preview" class="image-preview" src="#" alt="Image Preview" hidden>
+                    <img id="image-preview" class="image-preview" src="#" alt="업로드된 얼굴 사진 미리보기" hidden>
                 </div>
                 <button id="predict-btn" class="btn primary-btn" disabled>결과 보기</button>
             </section>
