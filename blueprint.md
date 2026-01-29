@@ -62,3 +62,17 @@ This application will be a visually appealing and interactive Lotto Number Gener
     3.  **JavaScript**:
         -   Add event listeners for tab switching.
         -   Update `translations` object to include recipe-related texts.
+
+## Current Request: Add Dinner Menu Recommendation
+- **Goal**: Add a new tab to recommend a dinner menu randomly.
+- **Plan**:
+    1.  **HTML**:
+        -   Add a tab navigation button "Dinner Menu".
+        -   Create a new tab content div (`#tab-dinner`).
+        -   Add a display area for the menu and a "Recommend" button.
+    2.  **CSS**:
+        -   Style the dinner menu section (reuse existing styles where possible).
+    3.  **JavaScript**:
+        -   Add dinner menu lists for each language.
+        -   Update `translations` to include tab title and button text.
+        -   Implement random menu selection logic.

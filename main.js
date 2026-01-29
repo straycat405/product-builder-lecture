@@ -1,10 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const lottoNumbersContainer = document.getElementById('lotto-numbers');
     const generateBtn = document.getElementById('generate-btn');
+    const recommendBtn = document.getElementById('recommend-btn');
+    const dinnerMenuText = document.getElementById('dinner-menu-text');
     const themeSwitch = document.getElementById('checkbox');
     const languageSelector = document.getElementById('language-selector');
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
+
+    const menus = {
+        ko: ["김치찌개", "된장찌개", "삼겹살", "치킨", "피자", "초밥", "파스타", "떡볶이", "햄버거", "족발"],
+        en: ["Kimchi Stew", "Soybean Paste Stew", "Grilled Pork Belly", "Fried Chicken", "Pizza", "Sushi", "Pasta", "Tteokbokki", "Hamburger", "Jokbal"],
+        ja: ["キムチチゲ", "味噌チゲ", "サムギョプサル", "チキン", "ピザ", "寿司", "パスタ", "トッポッキ", "ハンバーガー", "豚足"],
+        zh: ["泡菜汤", "大酱汤", "烤五花肉", "炸鸡", "比萨", "寿司", "意大利面", "辣炒年糕", "汉堡", "猪蹄"]
+    };
 
     const translations = {
         ko: {
@@ -13,6 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
             generateBtn: "번호 생성",
             tabLotto: "로또 생성기",
             tabRecipe: "두바이 초콜릿 쿠키",
+            tabDinner: "저녁 메뉴 추천",
+            dinnerTitle: "저녁 메뉴 추천",
+            recommendBtn: "메뉴 추천",
+            clickToRecommend: "버튼을 눌러주세요",
             recipeTitle: "두바이 쫀득 쿠키 레시피",
             ingredientsTitle: "재료",
             instructionsTitle: "만드는 법",
@@ -35,6 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
             generateBtn: "Generate Numbers",
             tabLotto: "Lotto Generator",
             tabRecipe: "Dubai Chocolate Cookie",
+            tabDinner: "Dinner Recommendation",
+            dinnerTitle: "Dinner Recommendation",
+            recommendBtn: "Recommend Menu",
+            clickToRecommend: "Click the button",
             recipeTitle: "Dubai Chewy Cookie Recipe",
             ingredientsTitle: "Ingredients",
             instructionsTitle: "Instructions",
@@ -57,6 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
             generateBtn: "番号生成",
             tabLotto: "ロト生成器",
             tabRecipe: "ドバイチョコレートクッキー",
+            tabDinner: "夕食メニュー推薦",
+            dinnerTitle: "夕食メニュー推薦",
+            recommendBtn: "メニュー推薦",
+            clickToRecommend: "ボタンを押してください",
             recipeTitle: "ドバイもちもちクッキーレシピ",
             ingredientsTitle: "材料",
             instructionsTitle: "作り方",
@@ -79,6 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
             generateBtn: "生成号码",
             tabLotto: "乐透生成器",
             tabRecipe: "迪拜巧克力曲奇",
+            tabDinner: "晚餐菜单推荐",
+            dinnerTitle: "晚餐菜单推荐",
+            recommendBtn: "推荐菜单",
+            clickToRecommend: "请点击按钮",
             recipeTitle: "迪拜软糯曲奇食谱",
             ingredientsTitle: "材料",
             instructionsTitle: "做法",
@@ -132,16 +157,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Detect and apply language
     const savedLanguage = localStorage.getItem('language');
+    let currentLang = 'ko'; // Default
     if (savedLanguage) {
-        setLanguage(savedLanguage);
+        currentLang = savedLanguage;
     } else {
         const browserLang = navigator.language.slice(0, 2);
         if (translations[browserLang]) {
-            setLanguage(browserLang);
-        } else {
-            setLanguage('ko'); // Default
+            currentLang = browserLang;
         }
     }
+    setLanguage(currentLang);
 
     // Theme switch logic
     themeSwitch.addEventListener('change', () => {
@@ -177,6 +202,23 @@ document.addEventListener('DOMContentLoaded', () => {
             numberElement.style.animationDelay = `${index * 0.1}s`;
             lottoNumbersContainer.appendChild(numberElement);
         });
+    });
+
+    recommendBtn.addEventListener('click', () => {
+        // Use current selected language or fallback to 'ko'
+        const lang = languageSelector.value || 'ko';
+        const menuList = menus[lang] || menus['ko'];
+        const randomMenu = menuList[Math.floor(Math.random() * menuList.length)];
+        dinnerMenuText.textContent = randomMenu;
+        
+        // Add a small animation effect
+        dinnerMenuText.style.opacity = 0;
+        dinnerMenuText.style.transform = "translateY(10px)";
+        setTimeout(() => {
+            dinnerMenuText.style.transition = "all 0.3s ease";
+            dinnerMenuText.style.opacity = 1;
+            dinnerMenuText.style.transform = "translateY(0)";
+        }, 50);
     });
 
     function generateLottoNumbers() {

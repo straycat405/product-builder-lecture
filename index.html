@@ -23,6 +23,7 @@
         <div class="tabs">
             <button class="tab-btn active" data-tab="lotto" data-i18n="tabLotto">로또 생성기</button>
             <button class="tab-btn" data-tab="recipe" data-i18n="tabRecipe">두바이 초콜릿 쿠키</button>
+            <button class="tab-btn" data-tab="dinner" data-i18n="tabDinner">저녁 메뉴 추천</button>
         </div>
 
         <div id="lotto" class="tab-content active">
@@ -56,6 +57,17 @@
                     <li data-i18n="step6">180도 오븐에서 12분간 굽습니다.</li>
                 </ol>
             </div>
+        </div>
+
+        <div id="dinner" class="tab-content">
+            <h1 data-i18n="dinnerTitle">저녁 메뉴 추천</h1>
+            <div class="dinner-menu-display" id="dinner-menu-display">
+                <span id="dinner-menu-text" data-i18n="clickToRecommend">버튼을 눌러주세요</span>
+            </div>
+            <button id="recommend-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-coffee"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                <span data-i18n="recommendBtn">메뉴 추천</span>
+            </button>
         </div>
     </div>
     <script src="main.js"></script>
