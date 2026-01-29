@@ -46,3 +46,19 @@ This application will be a visually appealing and interactive Lotto Number Gener
         -   Persist language choice in `localStorage`.
     3.  **CSS**:
         -   Style the language selector.
+
+## Current Request: Add Tab System and Recipe Page
+- **Goal**: Introduce a tabbed interface to switch between "Lotto Generator" and "Dubai Chocolate Cookie Recipe".
+- **Plan**:
+    1.  **HTML**:
+        -   Add a tab navigation bar inside the `.container`.
+        -   Wrap the existing Lotto content in a tab content div (`#tab-lotto`).
+        -   Create a new tab content div (`#tab-recipe`) for the cookie recipe.
+        -   Add recipe content (Ingredients, Instructions) with `data-i18n` attributes.
+    2.  **CSS**:
+        -   Style the tab navigation (buttons/links).
+        -   Handle showing/hiding tab content.
+        -   Style the recipe list and steps.
+    3.  **JavaScript**:
+        -   Add event listeners for tab switching.
+        -   Update `translations` object to include recipe-related texts.

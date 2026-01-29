@@ -126,6 +126,74 @@ input:checked + .slider:before {
     max-width: 500px;
     width: 90%;
     transition: background-color 0.3s;
+    overflow: hidden; /* For tab animations */
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--background-color);
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: all 0.3s;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+    opacity: 1;
+}
+
+.tab-btn.active {
+    opacity: 1;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Recipe Styles */
+.recipe-container {
+    text-align: left;
+    padding: 0 10px;
+}
+
+.recipe-container h3 {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+.ingredients-list, .instructions-list {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+.ingredients-list li, .instructions-list li {
+    margin-bottom: 8px;
 }
 
 h1 {

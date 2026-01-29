@@ -20,12 +20,43 @@
         </label>
     </div>
     <div class="container">
-        <h1 data-i18n="header">로또 번호 생성기</h1>
-        <div class="lotto-numbers" id="lotto-numbers"></div>
-        <button id="generate-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-gift"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
-            <span data-i18n="generateBtn">번호 생성</span>
-        </button>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="lotto" data-i18n="tabLotto">로또 생성기</button>
+            <button class="tab-btn" data-tab="recipe" data-i18n="tabRecipe">두바이 초콜릿 쿠키</button>
+        </div>
+
+        <div id="lotto" class="tab-content active">
+            <h1 data-i18n="header">로또 번호 생성기</h1>
+            <div class="lotto-numbers" id="lotto-numbers"></div>
+            <button id="generate-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-gift"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                <span data-i18n="generateBtn">번호 생성</span>
+            </button>
+        </div>
+
+        <div id="recipe" class="tab-content">
+            <h1 data-i18n="recipeTitle">두바이 쫀득 쿠키 레시피</h1>
+            <div class="recipe-container">
+                <h3 data-i18n="ingredientsTitle">재료</h3>
+                <ul class="ingredients-list">
+                    <li data-i18n="ing1">버터 100g</li>
+                    <li data-i18n="ing2">설탕 80g</li>
+                    <li data-i18n="ing3">밀가루 200g</li>
+                    <li data-i18n="ing4">피스타치오 크림 50g</li>
+                    <li data-i18n="ing5">카다이프면 30g</li>
+                    <li data-i18n="ing6">초콜릿 칩 50g</li>
+                </ul>
+                <h3 data-i18n="instructionsTitle">만드는 법</h3>
+                <ol class="instructions-list">
+                    <li data-i18n="step1">버터를 부드럽게 풉니다.</li>
+                    <li data-i18n="step2">설탕을 넣고 잘 섞습니다.</li>
+                    <li data-i18n="step3">밀가루를 체 쳐 넣고 반죽합니다.</li>
+                    <li data-i18n="step4">피스타치오 크림과 볶은 카다이프면을 섞습니다.</li>
+                    <li data-i18n="step5">반죽 안에 필링을 넣고 동그랗게 빚습니다.</li>
+                    <li data-i18n="step6">180도 오븐에서 12분간 굽습니다.</li>
+                </ol>
+            </div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

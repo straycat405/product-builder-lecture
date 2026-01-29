@@ -3,29 +3,113 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generate-btn');
     const themeSwitch = document.getElementById('checkbox');
     const languageSelector = document.getElementById('language-selector');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
 
     const translations = {
         ko: {
             title: "로또 번호 생성기",
             header: "로또 번호 생성기",
-            generateBtn: "번호 생성"
+            generateBtn: "번호 생성",
+            tabLotto: "로또 생성기",
+            tabRecipe: "두바이 초콜릿 쿠키",
+            recipeTitle: "두바이 쫀득 쿠키 레시피",
+            ingredientsTitle: "재료",
+            instructionsTitle: "만드는 법",
+            ing1: "버터 100g",
+            ing2: "설탕 80g",
+            ing3: "밀가루 200g",
+            ing4: "피스타치오 크림 50g",
+            ing5: "카다이프면 30g",
+            ing6: "초콜릿 칩 50g",
+            step1: "버터를 부드럽게 풉니다.",
+            step2: "설탕을 넣고 잘 섞습니다.",
+            step3: "밀가루를 체 쳐 넣고 반죽합니다.",
+            step4: "피스타치오 크림과 볶은 카다이프면을 섞습니다.",
+            step5: "반죽 안에 필링을 넣고 동그랗게 빚습니다.",
+            step6: "180도 오븐에서 12분간 굽습니다."
         },
         en: {
             title: "Lotto Number Generator",
             header: "Lotto Number Generator",
-            generateBtn: "Generate Numbers"
+            generateBtn: "Generate Numbers",
+            tabLotto: "Lotto Generator",
+            tabRecipe: "Dubai Chocolate Cookie",
+            recipeTitle: "Dubai Chewy Cookie Recipe",
+            ingredientsTitle: "Ingredients",
+            instructionsTitle: "Instructions",
+            ing1: "Butter 100g",
+            ing2: "Sugar 80g",
+            ing3: "Flour 200g",
+            ing4: "Pistachio Cream 50g",
+            ing5: "Kataifi Pastry 30g",
+            ing6: "Chocolate Chips 50g",
+            step1: "Soften the butter.",
+            step2: "Mix in the sugar well.",
+            step3: "Sift in the flour and knead.",
+            step4: "Mix pistachio cream and roasted Kataifi.",
+            step5: "Fill the dough with the filling and shape it into a ball.",
+            step6: "Bake at 180°C for 12 minutes."
         },
         ja: {
             title: "ロト番号生成器",
             header: "ロト番号生成器",
-            generateBtn: "番号生成"
+            generateBtn: "番号生成",
+            tabLotto: "ロト生成器",
+            tabRecipe: "ドバイチョコレートクッキー",
+            recipeTitle: "ドバイもちもちクッキーレシピ",
+            ingredientsTitle: "材料",
+            instructionsTitle: "作り方",
+            ing1: "バター 100g",
+            ing2: "砂糖 80g",
+            ing3: "小麦粉 200g",
+            ing4: "ピスタチオクリーム 50g",
+            ing5: "カダイフ麺 30g",
+            ing6: "チョコチップ 50g",
+            step1: "バターを柔らかくします。",
+            step2: "砂糖を入れてよく混ぜます。",
+            step3: "小麦粉をふるい入れてこねます。",
+            step4: "ピスタチオクリームと炒めたカダイフを混ぜます。",
+            step5: "生地の中にフィリングを入れて丸めます。",
+            step6: "180度のオーブンで12分間焼きます。"
         },
         zh: {
             title: "乐透号码生成器",
             header: "乐透号码生成器",
-            generateBtn: "生成号码"
+            generateBtn: "生成号码",
+            tabLotto: "乐透生成器",
+            tabRecipe: "迪拜巧克力曲奇",
+            recipeTitle: "迪拜软糯曲奇食谱",
+            ingredientsTitle: "材料",
+            instructionsTitle: "做法",
+            ing1: "黄油 100克",
+            ing2: "糖 80克",
+            ing3: "面粉 200克",
+            ing4: "开心果酱 50克",
+            ing5: "卡达伊夫面 30克",
+            ing6: "巧克力碎 50克",
+            step1: "将黄油软化。",
+            step2: "加入糖充分混合。",
+            step3: "筛入面粉并揉成面团。",
+            step4: "混合开心果酱和炒过的卡达伊夫。",
+            step5: "将馅料包入面团中并搓圆。",
+            step6: "180度烤箱烤12分钟。"
         }
     };
+
+    // Tab Switching Logic
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            // Add active class to clicked button and corresponding content
+            btn.classList.add('active');
+            const tabId = btn.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
 
     function setLanguage(lang) {
         if (!translations[lang]) return;
