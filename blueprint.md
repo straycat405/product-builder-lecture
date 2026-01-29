@@ -1,78 +1,40 @@
-# Blueprint: Lotto Number Generator
+# Blueprint: Animal Lookalike Test (동물상 테스트)
 
 ## Overview
 
-This application will be a visually appealing and interactive Lotto Number Generator. It will generate 6 unique random numbers between 1 and 45, displaying them in a clean, modern interface. The design will be responsive and accessible, following the guidelines for modern web development.
+This application is an AI-powered "Animal Lookalike Test" that determines whether a user looks more like a dog or a cat using a Teachable Machine image classification model. It provides a modern, interactive, and visually appealing user experience.
 
 ## Design and Features
 
 ### 1. **Visual Design**
-    - **Layout:** A centered, clean layout that is easy to navigate.
-    - **Color Palette:** A vibrant and energetic color palette with gradients.
-    - **Typography:** Expressive and clear typography to create a visual hierarchy.
-    - **Effects:**
-        - A subtle noise texture on the background for a premium feel.
-        - Multi-layered drop shadows on components to create a sense of depth.
-        - A "glow" effect on the interactive button.
-    - **Iconography:** Use of a simple icon on the button for better user understanding.
+    - **Aesthetics:** Clean, friendly, and modern UI with a focus on ease of use.
+    - **Color Palette:** Warm and inviting colors (e.g., soft yellows, oranges, and purples).
+    - **Typography:** Clear and expressive typography using modern sans-serif fonts.
+    - **Layout:** Responsive design that works well on both mobile and desktop.
+    - **Interactive Elements:** Polished buttons, smooth transitions, and progress bars for prediction results.
 
 ### 2. **Functionality**
-    - **Number Generation:** Generate 6 unique random numbers from 1 to 45.
-    - **Display:** Display the generated numbers in individual, styled elements.
-    - **Interactivity:** A button to trigger the number generation.
-    - **Animation:** A subtle animation for the numbers appearing on the screen.
+    - **AI Prediction:** Uses a Teachable Machine model to classify user images.
+    - **Image Upload:** Supports both file upload and drag-and-drop for images.
+    - **Real-time Feedback:** Displays a preview of the uploaded image.
+    - **Detailed Results:** Shows the probability for each animal category (Dog, Cat) using progress bars.
+    - **Social Sharing (Optional):** Ability to share results (to be considered).
 
 ### 3. **Technical Implementation**
-    - **HTML:** Semantic HTML5 structure.
-    - **CSS:** Modern CSS including Flexbox for layout, CSS Variables for theming, and transitions for animations.
-    - **JavaScript:** Modern ES6+ JavaScript, using a function to handle the logic for generating and displaying the numbers.
+    - **Framework-less:** Pure HTML, CSS, and JavaScript.
+    - **AI Model:** Teachable Machine Image Model (TensorFlow.js).
+    - **Modern CSS:** CSS Variables, Flexbox/Grid, and Container Queries.
+    - **ES Modules:** Organized JavaScript code.
 
 ## Current Plan
 
-1.  **HTML (`index.html`):** Set up the basic structure of the application, including a container for the numbers and a button.
-2.  **CSS (`style.css`):** Apply styles for the layout, colors, typography, and effects.
-3.  **JavaScript (`main.js`):** Implement the logic for generating and displaying the random numbers when the button is clicked.
-
-## Current Request: Add Multi-language Support
-- **Goal**: Support English, Korean, Japanese, and Chinese with auto-detection and manual selection.
-- **Plan**:
-    1.  **HTML**:
-        -   Add a `<select>` element for language switching.
-        -   Add `data-i18n` attributes to text elements (`h1`, `button`, `title` logic).
-    2.  **JavaScript**:
-        -   Create a `translations` object with support for 'en', 'ko', 'ja', 'zh'.
-        -   Implement language detection using `navigator.language`.
-        -   Create a `updateLanguage(lang)` function to update text content.
-        -   Persist language choice in `localStorage`.
-    3.  **CSS**:
-        -   Style the language selector.
-
-## Current Request: Add Tab System and Recipe Page
-- **Goal**: Introduce a tabbed interface to switch between "Lotto Generator" and "Dubai Chocolate Cookie Recipe".
-- **Plan**:
-    1.  **HTML**:
-        -   Add a tab navigation bar inside the `.container`.
-        -   Wrap the existing Lotto content in a tab content div (`#tab-lotto`).
-        -   Create a new tab content div (`#tab-recipe`) for the cookie recipe.
-        -   Add recipe content (Ingredients, Instructions) with `data-i18n` attributes.
-    2.  **CSS**:
-        -   Style the tab navigation (buttons/links).
-        -   Handle showing/hiding tab content.
-        -   Style the recipe list and steps.
-    3.  **JavaScript**:
-        -   Add event listeners for tab switching.
-        -   Update `translations` object to include recipe-related texts.
-
-## Current Request: Add Dinner Menu Recommendation
-- **Goal**: Add a new tab to recommend a dinner menu randomly.
-- **Plan**:
-    1.  **HTML**:
-        -   Add a tab navigation button "Dinner Menu".
-        -   Create a new tab content div (`#tab-dinner`).
-        -   Add a display area for the menu and a "Recommend" button.
-    2.  **CSS**:
-        -   Style the dinner menu section (reuse existing styles where possible).
-    3.  **JavaScript**:
-        -   Add dinner menu lists for each language.
-        -   Update `translations` to include tab title and button text.
-        -   Implement random menu selection logic.
+1.  **HTML (`index.html`):** 
+    - Structure the main container, upload area, and result section.
+    - Include TensorFlow.js and Teachable Machine libraries.
+2.  **CSS (`style.css`):** 
+    - Create a modern look with gradients, shadows, and responsive layouts.
+    - Style the upload area and result progress bars.
+3.  **JavaScript (`main.js`):** 
+    - Load the Teachable Machine model from the provided URL.
+    - Implement image preview and prediction logic.
+    - Update the UI with prediction results.

@@ -3,73 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로또 번호 생성기</title>
+    <title>인공지능 동물상 테스트</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="theme-switch-wrapper">
-        <select id="language-selector" class="language-selector">
-            <option value="ko">한국어</option>
-            <option value="en">English</option>
-            <option value="ja">日本語</option>
-            <option value="zh">中文</option>
-        </select>
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-        </label>
-    </div>
     <div class="container">
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="lotto" data-i18n="tabLotto">로또 생성기</button>
-            <button class="tab-btn" data-tab="recipe" data-i18n="tabRecipe">두바이 초콜릿 쿠키</button>
-            <button class="tab-btn" data-tab="dinner" data-i18n="tabDinner">저녁 메뉴 추천</button>
-        </div>
+        <header>
+            <h1>인공지능 동물상 테스트</h1>
+            <p class="subtitle">나와 닮은 동물은 무엇일까요?</p>
+        </header>
 
-        <div id="lotto" class="tab-content active">
-            <h1 data-i18n="header">로또 번호 생성기</h1>
-            <div class="lotto-numbers" id="lotto-numbers"></div>
-            <button id="generate-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-gift"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
-                <span data-i18n="generateBtn">번호 생성</span>
-            </button>
-        </div>
+        <main>
+            <section class="upload-section">
+                <input type="file" id="image-input" accept="image/*" style="display: none;">
+                <div class="file-upload" id="drop-zone">
+                    <div class="upload-content" id="upload-content">
+                        <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <p>클릭하거나 이미지를 드래그하여 업로드하세요</p>
+                    </div>
+                    <img id="image-preview" class="image-preview" src="#" alt="Image Preview" hidden>
+                </div>
+                <button id="predict-btn" class="btn primary-btn" disabled>결과 보기</button>
+            </section>
 
-        <div id="recipe" class="tab-content">
-            <h1 data-i18n="recipeTitle">두바이 쫀득 쿠키 레시피</h1>
-            <div class="recipe-container">
-                <h3 data-i18n="ingredientsTitle">재료</h3>
-                <ul class="ingredients-list">
-                    <li data-i18n="ing1">버터 100g</li>
-                    <li data-i18n="ing2">설탕 80g</li>
-                    <li data-i18n="ing3">밀가루 200g</li>
-                    <li data-i18n="ing4">피스타치오 크림 50g</li>
-                    <li data-i18n="ing5">카다이프면 30g</li>
-                    <li data-i18n="ing6">초콜릿 칩 50g</li>
-                </ul>
-                <h3 data-i18n="instructionsTitle">만드는 법</h3>
-                <ol class="instructions-list">
-                    <li data-i18n="step1">버터를 부드럽게 풉니다.</li>
-                    <li data-i18n="step2">설탕을 넣고 잘 섞습니다.</li>
-                    <li data-i18n="step3">밀가루를 체 쳐 넣고 반죽합니다.</li>
-                    <li data-i18n="step4">피스타치오 크림과 볶은 카다이프면을 섞습니다.</li>
-                    <li data-i18n="step5">반죽 안에 필링을 넣고 동그랗게 빚습니다.</li>
-                    <li data-i18n="step6">180도 오븐에서 12분간 굽습니다.</li>
-                </ol>
+            <section id="result-section" class="result-section" hidden>
+                <h2>테스트 결과</h2>
+                <div id="label-container" class="label-container">
+                    <!-- Results will be injected here -->
+                </div>
+                <button id="retry-btn" class="btn secondary-btn">다시 하기</button>
+            </section>
+
+            <div id="loading" class="loading" hidden>
+                <div class="spinner"></div>
+                <p>모델을 분석 중입니다...</p>
             </div>
-        </div>
+        </main>
 
-        <div id="dinner" class="tab-content">
-            <h1 data-i18n="dinnerTitle">저녁 메뉴 추천</h1>
-            <div class="dinner-menu-display" id="dinner-menu-display">
-                <span id="dinner-menu-text" data-i18n="clickToRecommend">버튼을 눌러주세요</span>
-            </div>
-            <button id="recommend-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-coffee"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                <span data-i18n="recommendBtn">메뉴 추천</span>
-            </button>
-        </div>
+        <footer>
+            <p>&copy; 2024 AI Animal Test. Powered by Teachable Machine</p>
+        </footer>
     </div>
+
+    <!-- TensorFlow.js and Teachable Machine Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
